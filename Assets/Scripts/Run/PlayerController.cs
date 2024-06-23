@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
         if (forwardSpeed < maxSpeed)
         {
-            forwardSpeed += 0.1f * Time.deltaTime;
+            forwardSpeed += 0.015f * Time.deltaTime;
         }
 
         direction.z = forwardSpeed;
@@ -147,7 +147,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Slide");
         animator.SetBool("isSliding", true);
         controller.center = new Vector3(0, -0.5f, 0);
-        controller.height = 0.5f;
+        controller.height = 0.2f;
         yield return new WaitForSeconds(1.3f);
         controller.center = new Vector3(0, 0, 0);
         controller.height = 2;

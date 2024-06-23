@@ -10,20 +10,27 @@ user32 = ctypes.windll.user32
 screen_width = user32.GetSystemMetrics(0)
 screen_height = user32.GetSystemMetrics(1)
 
-# Set fixed window location and size
+# Set fixed window location and size (1/4 of the screen size)
 fixed_width = screen_width // 4
 fixed_height = screen_height // 4
-window_x = 0
+window_x = 0  # Position at the bottom-right corner
 window_y = 0
 
 # Create a named window with no border
-cv2.namedWindow('MediaPipe Pose', cv2.WND_PROP_FULLSCREEN)
-cv2.setWindowProperty('MediaPipe Pose', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+cv2.namedWindow('MediaPipe Pose', cv2.WINDOW_NORMAL) 
 cv2.moveWindow('MediaPipe Pose', window_x, window_y)
+cv2.resizeWindow('MediaPipe Pose', fixed_width, fixed_height)
 
-# Make window transparent
+# Remove window borders
+cv2.setWindowProperty('MediaPipe Pose', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_NORMAL)
+cv2.setWindowProperty('MediaPipe Pose', cv2.WND_PROP_TOPMOST, 1)
+
+# Get window handle
 hwnd = ctypes.windll.user32.FindWindowW(None, "MediaPipe Pose")
-ctypes.windll.user32.SetWindowLongW(hwnd, -20, ctypes.windll.user32.GetWindowLongW(hwnd, -20) | 0x80000 | 0x20)
+
+# Remove title bar and border (GWL_STYLE) and make window layered and transparent to mouse events (GWL_EXSTYLE)
+ctypes.windll.user32.SetWindowLongW(hwnd, -16, ctypes.windll.user32.GetWindowLongW(hwnd, -16) & ~0x00800000)  # WS_CAPTION
+ctypes.windll.user32.SetWindowLongW(hwnd, -20, ctypes.windll.user32.GetWindowLongW(hwnd, -20) | 0x80000 | 0x20)  # WS_EX_LAYERED | WS_EX_TRANSPARENT
 
 # Set window opacity (0-255, where 0 is fully transparent and 255 is fully opaque)
 opacity = 192  # Example value, adjust as needed

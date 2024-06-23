@@ -56,12 +56,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Run\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\Menu&amp;Shop\RotateModel.cs" />
+    <Compile Include="Assets\Scripts\Menu&amp;Shop\ShopManager.cs" />
     <Compile Include="Assets\Scripts\Run\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Run\Events.cs" />
     <Compile Include="Assets\Scripts\Run\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Menu&amp;Shop\MainMenuTilesManager.cs" />
     <Compile Include="Assets\Scripts\Run\FloorManager.cs" />
     <Compile Include="Assets\Scripts\UDPRecieve.cs" />
+    <Compile Include="Assets\Scripts\Fruit\Fruits.cs" />
+    <Compile Include="Assets\Scripts\Events.cs" />
     <Compile Include="Assets\Scripts\Run\TileManager.cs" />
+    <Compile Include="Assets\Scripts\Menu&amp;Shop\MainMenuManager.cs" />
+    <Compile Include="Assets\Scripts\Run\Coin.cs" />
+    <Compile Include="Assets\Scripts\Menu&amp;Shop\MainMenuPlayerController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

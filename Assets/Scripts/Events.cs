@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Events : MonoBehaviour
 {
-    public void Replay()
+    public void Play()
     {
         SceneManager.LoadScene("Run");
     }
@@ -15,8 +15,23 @@ public class Events : MonoBehaviour
         SceneManager.LoadScene("Shop");
     }
 
+    public void Fruit()
+    {
+        SceneManager.LoadScene("Fruit");
+    }
+
+    public void Hole()
+    {
+        SceneManager.LoadScene("Hole");
+    }
+
     public void MainMenu()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
