@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class Fruits : MonoBehaviour
 {
+    private FruitGameManager gm;
     public GameObject slicedFruit;
     public GameObject fruitJuice;
+
+    private float rotationForce = 200;
+    private Rigidbody rb;
+    public int scorePoints;
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
+        gm = FindObjectOfType<FruitGameManager>();
     }
 
     void Update()
     {
-        
+        transform.Rotate(Vector2.right * Time.deltaTime * rotationForce);
     }
 
     private void InstantiateSlicedFruit()
@@ -26,15 +33,20 @@ public class Fruits : MonoBehaviour
         foreach (Rigidbody srb in slicedRb)
         {
             srb.AddExplosionForce(130f, transform.position, 10);
+            srb.velocity = rb.velocity * 1.2f;
         }
 
         Destroy(instantiatedFruit, 4);
         Destroy(instantiatedJuice, 4);
     }
 
-    private void OnMouseDown()
+    private void OnTriggerEnter(Collider other)
     {
-        InstantiateSlicedFruit();
-        Destroy(gameObject);
+        if (other.tag == "Blade")
+        {
+            gm.UpdateTheScore(scorePoints);
+            Destroy(gameObject);
+            InstantiateSlicedFruit();
+        }
     }
 }

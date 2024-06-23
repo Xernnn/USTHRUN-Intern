@@ -58,6 +58,7 @@
     <Compile Include="Assets\Scripts\Run\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Menu&amp;Shop\RotateModel.cs" />
     <Compile Include="Assets\Scripts\Menu&amp;Shop\ShopManager.cs" />
+    <Compile Include="Assets\Scripts\Fruit\BombScript.cs" />
     <Compile Include="Assets\Scripts\Run\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Run\CameraController.cs" />
     <Compile Include="Assets\Scripts\Menu&amp;Shop\MainMenuTilesManager.cs" />
@@ -66,8 +67,11 @@
     <Compile Include="Assets\Scripts\Fruit\Fruits.cs" />
     <Compile Include="Assets\Scripts\Events.cs" />
     <Compile Include="Assets\Scripts\Run\TileManager.cs" />
+    <Compile Include="Assets\Scripts\Fruit\Blade.cs" />
     <Compile Include="Assets\Scripts\Menu&amp;Shop\MainMenuManager.cs" />
+    <Compile Include="Assets\Scripts\Fruit\FruitGameManager.cs" />
     <Compile Include="Assets\Scripts\Run\Coin.cs" />
+    <Compile Include="Assets\Scripts\Fruit\SpawnObjects.cs" />
     <Compile Include="Assets\Scripts\Menu&amp;Shop\MainMenuPlayerController.cs" />
   </ItemGroup>
   <ItemGroup>

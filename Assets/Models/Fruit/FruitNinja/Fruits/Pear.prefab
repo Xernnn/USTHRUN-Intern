@@ -149,3 +149,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slicedFruit: {fileID: 6995453474846924345, guid: 8b8dc7d22d6414444a6655640f904b35, type: 3}
   fruitJuice: {fileID: 9043096737186174029, guid: 190c5a4a55f16234eb82e0a0e19949b5, type: 3}
+  scorePoints: 25
