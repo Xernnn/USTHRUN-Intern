@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Run.unity
+- path: Assets/Scenes/Fruit.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
