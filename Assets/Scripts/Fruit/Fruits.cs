@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Fruits : MonoBehaviour
 {
@@ -12,6 +13,14 @@ public class Fruits : MonoBehaviour
     private Rigidbody rb;
     public int scorePoints;
 
+    void Awake()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        if (currentSceneName != "FruitOnly")
+        {
+            this.enabled = false;
+        }
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -42,11 +51,15 @@ public class Fruits : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Blade")
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        if (currentSceneName == "FruitOnly")
         {
-            gm.UpdateTheScore(scorePoints);
-            Destroy(gameObject);
-            InstantiateSlicedFruit();
+            if (other.tag == "Blade")
+            {
+                gm.UpdateTheScore(scorePoints);
+                Destroy(gameObject);
+                InstantiateSlicedFruit();
+            }
         }
     }
 }

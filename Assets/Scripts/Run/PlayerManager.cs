@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject gameOverPanel;
 
     public static bool isGameStarted;
-
+    public static float initial_point;
     public static float point;
     public Text pointText;
     public Text GameOverPointText;
@@ -28,8 +28,8 @@ public class PlayerManager : MonoBehaviour
         isGameStarted = false;
         Time.timeScale = 1.0f;
 
-        point = 0;
-        pointText.text = "Score: " + point;
+        initial_point = PlayerPrefs.GetInt("point", 0);
+        pointText.text = "Score: " + initial_point;
 
         // Load saved coins and high score
         numberOfCoins = PlayerPrefs.GetInt("Coins", 0);
@@ -49,7 +49,7 @@ public class PlayerManager : MonoBehaviour
             StartCoroutine(EndGame(2f));
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isGameStarted)
+        if (RunManager.move == 5 && !isGameStarted)
         {
             isGameStarted = true;
         }
@@ -65,7 +65,7 @@ public class PlayerManager : MonoBehaviour
     void UpdateScore()
     {
         float distance = Vector3.Distance(startPosition, playerController.transform.position);
-        point = distance;
+        point = initial_point + distance; // Add distance to the initial point
         pointText.text = "Score: " + Mathf.Floor(point);
     }
 
@@ -84,7 +84,7 @@ public class PlayerManager : MonoBehaviour
             PlayerPrefs.SetInt("Highscore", highscore);
             highscoreText.text = "Highscore: " + highscore;
         }
-
+        PlayerPrefs.SetFloat("point", 0);
         gameOverPanel.SetActive(true);
         Time.timeScale = 0;
     }

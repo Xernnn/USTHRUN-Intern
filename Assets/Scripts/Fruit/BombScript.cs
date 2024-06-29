@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BombScript : MonoBehaviour
 {
     private float rotationForce = 200;
     public ParticleSystem explosionParticle;
+    
+    void Awake()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+    }
 
     void Start()
     {
@@ -21,9 +27,17 @@ public class BombScript : MonoBehaviour
     {
         if (other.tag == "Blade")
         {
+            string currentSceneName = SceneManager.GetActiveScene().name;
             Destroy(gameObject);
             Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
-            FindObjectOfType<FruitGameManager>().GameOver();
+            if (currentSceneName == "Fruit")
+            {
+                FindObjectOfType<FruitRunGameManager>().GameOver();
+            }
+            else
+            {
+                FindObjectOfType<FruitGameManager>().GameOver();
+            }
         }
     }
 }

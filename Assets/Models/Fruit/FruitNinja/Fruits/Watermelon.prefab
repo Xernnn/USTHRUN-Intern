@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -3907484721749845764}
   - component: {fileID: 6731410891121161230}
   - component: {fileID: -8351641979050922628}
+  - component: {fileID: -4949336558228588473}
   m_Layer: 0
   m_Name: Watermelon
   m_TagString: Fruit
@@ -149,3 +150,18 @@ MonoBehaviour:
   slicedFruit: {fileID: 270909255310568348, guid: db4c1a2ab8482594cac2b79abe897e1c, type: 3}
   fruitJuice: {fileID: 7307698287515974882, guid: a42b02357913b224a8332d270dfcbfc2, type: 3}
   scorePoints: 10
+--- !u!114 &-4949336558228588473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8428806436309670769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2a86613f227e4489f4639b1d02ec12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slicedFruit: {fileID: 270909255310568348, guid: db4c1a2ab8482594cac2b79abe897e1c, type: 3}
+  fruitJuice: {fileID: 7307698287515974882, guid: a42b02357913b224a8332d270dfcbfc2, type: 3}
+  scorePoints: 1

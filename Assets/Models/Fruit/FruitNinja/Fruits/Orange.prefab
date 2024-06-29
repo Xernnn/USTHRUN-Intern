@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -5717621829287995970}
   - component: {fileID: 7830318538030301193}
   - component: {fileID: -8128909304277316839}
+  - component: {fileID: 4164644662127931906}
   m_Layer: 0
   m_Name: Orange
   m_TagString: Fruit
@@ -144,6 +145,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb3d4a04cbfc67a4d8528d9cc99ea000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slicedFruit: {fileID: 5822990487296261168, guid: caf621741c0aa5c418196860563c04c7, type: 3}
+  fruitJuice: {fileID: 8051665503665027812, guid: c3d938870e7fe2846a794546b93ce4e9, type: 3}
+  scorePoints: 20
+--- !u!114 &4164644662127931906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7845168532104395746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2a86613f227e4489f4639b1d02ec12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slicedFruit: {fileID: 5822990487296261168, guid: caf621741c0aa5c418196860563c04c7, type: 3}

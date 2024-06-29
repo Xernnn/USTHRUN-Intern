@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
         if (controller.isGrounded)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (RunManager.move == 3) // Replace Input.GetKeyDown(KeyCode.W)
             {
                 Jump();
             }
@@ -67,12 +68,12 @@ public class PlayerController : MonoBehaviour
             direction.y += Gravity * Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && !isSliding)
+        if (RunManager.move == 4 && !isSliding) // Replace Input.GetKeyDown(KeyCode.S)
         {
             StartCoroutine(Slide());
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (RunManager.move == 1) // Replace Input.GetKeyDown(KeyCode.D)
         {
             desiredLane++;
             if (desiredLane == 3)
@@ -81,7 +82,7 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(Right());
             }
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (RunManager.move == 2) // Replace Input.GetKeyDown(KeyCode.A)
         {
             desiredLane--;
             if (desiredLane == -1)
@@ -139,6 +140,12 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("isGameOver", true);
             }
         }
+        else if (hit.transform.CompareTag("FruitPortal"))
+        {
+            int point = (int)PlayerManager.point;
+            PlayerPrefs.SetInt("Score", point);
+            SceneManager.LoadScene("Fruit");
+        }
     }
 
     private IEnumerator Slide()
@@ -160,7 +167,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Left");
         animator.SetBool("isLeft", true);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(1f);
         animator.SetBool("isLeft", false);
         Debug.Log("No Left");
     }
@@ -169,7 +176,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Right");
         animator.SetBool("isRight", true);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(1f);
         animator.SetBool("isRight", false);
         Debug.Log("No Right");
     }

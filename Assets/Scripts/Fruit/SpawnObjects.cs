@@ -17,7 +17,7 @@ public class SpawnObjects : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
-        while (FindObjectOfType<FruitGameManager>().gameIsOver == false)
+        while (FindObjectOfType<FruitGameManager>().gameIsOver == false || FindObjectOfType<FruitRunGameManager>().gameIsOver == false)
         {
             InstantiateRandomObject();
             yield return new WaitForSeconds(RandomRepeatrate());

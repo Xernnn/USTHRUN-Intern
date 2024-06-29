@@ -15,6 +15,7 @@ public class FruitGameManager : MonoBehaviour
 
     void Start()
     {
+        gameIsOver = false;
         score = 0;
 
         highscore = PlayerPrefs.GetInt("Highscore", 0);

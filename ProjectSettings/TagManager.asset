@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Table
+  - Obstacle
+  - Coin
+  - Bomb
+  - Fruit
+  - Blade
+  - Wall
+  - FruitPortal
   layers:
   - Default
   - TransparentFX

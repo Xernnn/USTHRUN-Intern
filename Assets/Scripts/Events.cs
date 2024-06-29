@@ -19,7 +19,10 @@ public class Events : MonoBehaviour
     {
         SceneManager.LoadScene("Fruit");
     }
-
+    public void FruitOnly()
+    {
+        SceneManager.LoadScene("FruitOnly");
+    }
     public void Hole()
     {
         SceneManager.LoadScene("Hole");

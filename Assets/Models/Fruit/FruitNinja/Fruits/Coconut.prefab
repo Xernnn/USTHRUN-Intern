@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -8355513103703351667}
   - component: {fileID: 1538628735748804535}
   - component: {fileID: -1959284306933284006}
+  - component: {fileID: 3628222296994712039}
   m_Layer: 0
   m_Name: Coconut
   m_TagString: Fruit
@@ -144,6 +145,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb3d4a04cbfc67a4d8528d9cc99ea000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slicedFruit: {fileID: 7275307241191228996, guid: a9ee99ae069107c4ab00b52e36dfb284, type: 3}
+  fruitJuice: {fileID: 9105820111967270942, guid: 16af7de0c4fcdeb4496d4f1663534855, type: 3}
+  scorePoints: 15
+--- !u!114 &3628222296994712039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6104471475602763961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2a86613f227e4489f4639b1d02ec12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slicedFruit: {fileID: 7275307241191228996, guid: a9ee99ae069107c4ab00b52e36dfb284, type: 3}
